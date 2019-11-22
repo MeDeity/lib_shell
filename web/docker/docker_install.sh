@@ -48,7 +48,7 @@ function docker_install(){
     echo "检测docker的安装情况中,请稍后..."
     docker -v
     if [ $? -eq 0 ]; then
-        docker_remove
+        echo "docker 已经安装过了"
     else
         echo "安装docker环境中,请稍后..."
         curl -sSL https://get.daocloud.io/docker | sh
@@ -56,4 +56,3 @@ function docker_install(){
     fi
 }
 
-docker_install
