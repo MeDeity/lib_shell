@@ -19,7 +19,9 @@ function handleInput(){
       docker = ./docker/docker_install.sh
       docker.docker_remove
       ;;
-    )
+    *)
+      exit 1
+      ;;
   esac
 }
 
