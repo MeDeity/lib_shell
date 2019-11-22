@@ -27,5 +27,3 @@ function obtainOS(){
             ;;
     esac
 }
-
-obtainOS
