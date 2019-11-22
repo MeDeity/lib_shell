@@ -1,13 +1,12 @@
 #! /bin/bash
 
 function docker_remove(){
-    echo "是否卸载重装(y/n)"
-    read -p "是否卸载重装(y/n)" choice
-    if($choice = "Y" -o $choice = "y"){
+    read -p "是否卸载重装(y/n)" -n 1  choice
+    if [ $choice = "Y" -o $choice = "y" ]; then
         sudo apt-get remove docker docker-engine
-        if [$? -eq 0]; then
+        if [ $? -eq 0 ]; then
             rm -fr /var/lib/docker/
-            if [$? -eq 0]; then
+            if [ $? -eq 0 ]; then
                 echo "卸载完成,即将重新安装"
                 docker_install
             else
@@ -16,16 +15,16 @@ function docker_remove(){
         else
             echo "卸载docker失败,请手动卸载【1】"
         fi
-    }else{
+    else
         echo "docker已取消重装"
-    }
+    fi
     
 }
 
 function docker_install(){
     echo "检测docker的安装情况中,请稍后..."
     docker -v
-    if [$? -eq 0]; then
+    if [ $? -eq 0 ]; then
         docker_remove
     else
         echo "安装docker环境中,请稍后..."

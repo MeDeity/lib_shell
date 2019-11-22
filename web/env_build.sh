@@ -8,14 +8,15 @@ function menu(){
     echo "===================="
 }
 
-function handleInput(int index){
-  case index in
+function handleInput(){
+  case $1 in
     1)
     ./docker/docker_install.sh
     ;;
+  esac
 }
 
-echo menu
+menu
 read index
-handleInput
+handleInput $index
 
