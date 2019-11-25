@@ -12,6 +12,7 @@ function docker_remove(){
             centos|rhel)
                 sudo yum remove docker \
                     docker-common \
+                    docker-ce-cli \
                     container-selinux \
                     docker-selinux \
                     docker-engine    
