@@ -10,14 +10,13 @@ function menu(){
 }
 
 function handleInput(){
+  source ./docker/docker_install.sh
   case $1 in
     1)
-      docker = ./docker/docker_install.sh
-      docker.docker_install
+      docker_install
       ;;
     2)
-      docker = ./docker/docker_install.sh
-      docker.docker_remove
+      docker_remove
       ;;
     *)
       exit 1
