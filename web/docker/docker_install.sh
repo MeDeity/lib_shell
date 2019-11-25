@@ -53,6 +53,7 @@ function docker_install(){
         echo "安装docker环境中,请稍后..."
         curl -sSL https://get.daocloud.io/docker | sh
         echo "安装docker环境...安装完成!"
+        systemctl start docker
     fi
 }
 
