@@ -1,0 +1,17 @@
+# 当前的版本 
+version: "3"
+# 待安装的镜像
+services:
+
+  mysql:
+        network_mode: "host"
+        environment:
+            MYSQL_ROOT_PASSWORD: "czcat"
+            MYSQL_USER: 'root'
+            MYSQL_PASS: 'czcat'
+        image: "docker.io/mysql:latest" 
+        restart: always
+        volumes:
+            - "./db:/var/lib/mysql"
+            - "./conf/my.cnf:/etc/my.cnf"
+            - "./init:/docker-entrypoint-initdb.d/"

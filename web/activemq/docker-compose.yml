@@ -1,0 +1,16 @@
+# 当前的版本 
+version: "3"
+# 待安装的镜像
+services:
+
+  activemq:
+    image: webcenter/activemq
+    container_name: activemq
+    #容器的映射端口
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    restart: always
+    #定义挂载点
+    volumes:
+      - ./data/activemq:/data/activemq
