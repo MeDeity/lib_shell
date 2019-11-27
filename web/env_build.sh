@@ -5,10 +5,9 @@ function menu(){
     echo "环境搭建脚本"
     echo "1.docker 安装"
     echo "2.docker 重装"
-    echo "3.脚本初始化"
-    echo "4.批量安装容器"
-    echo "5.批量停止容器"
-    echo "6.批量移除容器"
+    echo "3.批量安装容器"
+    echo "4.批量停止容器"
+    echo "5.批量移除容器"
     echo "create by MeDeity(langrenbule@gmail.com) 2019-11-22 15:38:46"
     echo "===================="
 }
@@ -24,15 +23,12 @@ function handleInput(){
       docker_remove
       ;;
     3)
-      compose init
+      compose up -d
       ;;
     4)
-      compose start
-      ;;
-    5)
       compose stop
       ;;  
-    6)
+    5)
       compose rm
       ;;    
     *)
