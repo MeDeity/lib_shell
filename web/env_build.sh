@@ -24,16 +24,16 @@ function handleInput(){
       docker_remove
       ;;
     3)
-      docker-compose init
+      compose init
       ;;
     4)
-      docker-compose start
+      compose start
       ;;
     5)
-      docker-compose stop
+      compose stop
       ;;  
     6)
-      docker-compose rm
+      compose rm
       ;;    
     *)
       exit 1
