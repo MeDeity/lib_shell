@@ -60,3 +60,14 @@ function docker_install(){
     fi
 }
 
+function docker-compose_install(){
+    sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+    docker-compose --version
+    if [ $? -eq 0 ]; then
+        echo "docker-compose 安装成功"
+    else
+        echo "docker-compose 安装失败,请自行检查"
+    fi
+}
+
