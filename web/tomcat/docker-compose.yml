@@ -1,14 +1,11 @@
-# 当前的版本 
-version: "3"
-# 待安装的镜像
-services:
-  #tomcat 服务
-  tomcat:     
-    image: tomcat:7    #镜像
-    #容器名
-    container_name: tomcat   
-    ports: #端口
-     - "8080:8080"
-    volumes:  #数据卷
-     - "./webapps:/usr/local/tomcat/webapps"
+tomcat:
+    container_name: tomcat
     restart: always
+    image: tomcat:9.0
+    ports:
+      - 8080:8080
+      - 8009:8009
+    volumes:
+      - ./webapps/solo.war:/usr/local/tomcat/webapps/solo.war
+      - ./conf/server.xml:/usr/local/tomcat/conf/server.xml
+      - ./logs:/usr/local/tomcat/logs
