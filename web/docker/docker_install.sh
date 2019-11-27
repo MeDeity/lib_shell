@@ -55,6 +55,8 @@ function docker_install(){
         curl -sSL https://get.daocloud.io/docker | sh
         echo "安装docker环境...安装完成!"
         systemctl start docker
+        # docker服务自动重启设置
+        systemctl enable docker.service
     fi
 }
 
