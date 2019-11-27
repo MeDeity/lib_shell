@@ -1,0 +1,19 @@
+version: '3'
+services:
+ tracker:
+  container_name: tracker
+  image: "morunchang/fastdfs"
+  network_mode: host
+  entrypoint: sh tracker.sh
+ storage0:
+  container_name: storage0
+  depends_on:
+    - tracker
+  build: ./storage
+  network_mode: host
+  environment:
+   GROUP_NAME: storagegroup
+   TRACKER_IP: 192.168.1.144:22122
+  # 数据卷挂载目录
+  volumes:
+    - /var/local/docker/fastdfs/storage0:/data/fast_data
