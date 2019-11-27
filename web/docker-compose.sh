@@ -68,5 +68,3 @@ elif [ "$1" = "rm" -o "$1" = "del" -o "$1" = "delete" ]; then
     compose "rm"
 
 fi
-
-exit 0
