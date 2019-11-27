@@ -20,7 +20,7 @@ services:
       # fastdht服务端口，默认11411端口，可修改
       FDHT_PORT: 11411
       # docker所在主机的IP地址，默认使用eth0网卡的地址
-      IP: 192.168.23.21
+      IP: 120.27.229.28
     volumes:
       # 将本地目录映射到docker容器内的fastdfs数据存储目录，将fastdfs文件存储到主机上，以免每次重建docker容器，之前存储的文件就丢失了。
       - ~/fastdfs:/var/local
@@ -28,7 +28,7 @@ services:
     # network_mode: host
     networks:
       fastdfs_net:
-        ipv4_address: 192.168.23.21
+        ipv4_address: 120.27.229.28
 
 # fastdfs专用网络，由于windows和unix识别不了host网络，目前需要新建网段，强制指定容器ip跟宿主机ip一致
 networks:
@@ -38,4 +38,4 @@ networks:
       parent: eth0
     ipam:
       config:
-        - subnet: 192.168.23.0/24
+        - subnet: 120.27.229.0/24
