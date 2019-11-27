@@ -14,6 +14,9 @@ services:
   environment:
    GROUP_NAME: storagegroup
    TRACKER_IP: 120.27.229.28:22122
+  ports:
+    - "8080:8080"
+    - "23000:23000"
   # 数据卷挂载目录
   volumes:
     - /var/local/docker/fastdfs/storage0:/data/fast_data
