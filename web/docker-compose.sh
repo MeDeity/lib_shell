@@ -25,7 +25,7 @@ compose(){
 	docker-compose $1
 	cd ..
 	
-	cd fastdfs
+	cd my-fastdfs
 	docker-compose $1
 	cd ..
 }
