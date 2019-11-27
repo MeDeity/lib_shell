@@ -1,0 +1,14 @@
+# 当前的版本 
+version: "3"
+# 待安装的镜像
+services:
+  #tomcat 服务
+  tomcat:     
+    image: tomcat:7    #镜像
+    #容器名
+    container_name: tomcat   
+    ports: #端口
+     - "8080:8080"
+    volumes:  #数据卷
+     - "./webapps:/usr/local/tomcat/webapps"
+    restart: always
