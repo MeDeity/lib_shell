@@ -7,5 +7,5 @@ tomcat:
       - 8009:8009
     volumes:
       - ./webapps:/usr/local/tomcat/webapps/
-      - ./conf/server.xml:/usr/local/tomcat/conf/server.xml
+      - ./conf:/usr/local/tomcat/conf/
       - ./logs:/usr/local/tomcat/logs
