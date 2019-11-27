@@ -23,7 +23,7 @@ function handleInput(){
       docker_remove
       ;;
     3)
-      compose up -d
+      compose "up -d"
       ;;
     4)
       compose stop
