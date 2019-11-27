@@ -7,16 +7,16 @@ services:
             - "8088:80"
         volumes:
             - ./code:/code
-            - ./conf:/etc/nginx/conf.d/
-            - ./log:/var/log/nginx
+            - ./site.conf:/etc/nginx/conf.d/default.conf
+            - /private/var/log/nginx:/var/log/nginx
             - "phpsocket:/var/run"
 
     php:
         image: php:fpm
         volumes:
             - ./code:/code
-            - ./fpm/etc:/usr/local/etc/php-fpm.conf
-            - ./fpm/etc:/usr/local/etc/php-fpm.d/www.conf
+            - ./php-fpm.conf:/usr/local/etc/php-fpm.conf
+            - ./www.conf:/usr/local/etc/php-fpm.d/www.conf
             - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
             - "phpsocket:/var/run"
 
