@@ -7,7 +7,7 @@ services:
             - "8088:80"
         volumes:
             - ./code:/code
-            - ./conf:/etc/nginx/conf.d/
+            - ./conf:/etc/nginx/conf.d
             - ./log:/var/log/nginx
             - "phpsocket:/var/run"
 
@@ -15,8 +15,8 @@ services:
         image: php:fpm
         volumes:
             - ./code:/code
-            - ./fpm/etc:/usr/local/etc/php-fpm.conf
-            - ./fpm/etc:/usr/local/etc/php-fpm.d/www.conf
+            - ./fpm/etc:/usr/local/etc
+            - ./fpm/etc:/usr/local/etc/php-fpm.d
             - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
             - "phpsocket:/var/run"
 
