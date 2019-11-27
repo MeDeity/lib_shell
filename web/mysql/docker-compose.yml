@@ -10,6 +10,7 @@ services:
             MYSQL_USER: 'root'
             MYSQL_PASS: 'czcat'
         image: "docker.io/mysql:latest" 
+        # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
         restart: always
         volumes:
             - "./db:/var/lib/mysql"

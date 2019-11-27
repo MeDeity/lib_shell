@@ -15,4 +15,5 @@ services:
     command: redis-server /etc/redis/redis.conf 
     # root拥有真正的root权限
     privileged: true
+    # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
     restart: always

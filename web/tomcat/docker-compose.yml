@@ -1,5 +1,6 @@
 tomcat:
     container_name: tomcat
+    # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
     restart: always
     image: tomcat:9.0
     ports:
