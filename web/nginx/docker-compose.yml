@@ -3,7 +3,7 @@ version: '3'
 services:
   nginx:
     restart: always
-    image: nginx:1.11.6-alpine
+    image: nginx
     ports:
       - 8080:80
       - 80:80

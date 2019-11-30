@@ -6,9 +6,9 @@ services:
   mysql:
         network_mode: "host"
         environment:
-            MYSQL_ROOT_PASSWORD: "czcat"
-            MYSQL_USER: 'root'
-            MYSQL_PASS: 'czcat'
+            MYSQL_ROOT_PASSWORD: "123456"
+            # MYSQL_USER: 'root' 新建用户
+            # MYSQL_PASS: 'czcat'
         image: "docker.io/mysql:latest" 
         # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
         restart: always
