@@ -13,6 +13,11 @@ services:
       - "61616:61616"
       - "8161:8161"
     restart: always
+    # 限制日志的大小
+    logging: 
+        driver: "json-file"
+        options: 
+            max-size: "500m"
     #定义挂载点
     volumes:
       - ./data/activemq:/data/activemq

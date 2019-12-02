@@ -8,7 +8,11 @@ services:
     container_name: redis
     ports:
       - "6379:6379"
-
+    # 限制日志的大小
+    logging: 
+        driver: "json-file"
+        options: 
+            max-size: "500m"
     volumes:
       # 将配置文件挂载在conf目录下
       - ./conf/redis.conf:/etc/redis/redis.conf 

@@ -12,6 +12,11 @@ services:
         image: "docker.io/mysql:latest" 
         # 该容器是否需要开机启动+自动重启。若需要，则取消注释。
         restart: always
+        # 限制日志的大小
+        logging: 
+            driver: "json-file"
+            options: 
+                max-size: "500m"
         volumes:
             - "./db:/var/lib/mysql"
             - "./conf/my.cnf:/etc/my.cnf"
