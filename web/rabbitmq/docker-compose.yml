@@ -1,0 +1,22 @@
+# 当前的版本 
+version: "3"
+# 待安装的镜像
+services:
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    #reboot 后会随机启动
+    restart: always
+    #容器的映射端口
+    ports:
+      - 5672:5672
+      - 15672:15672
+    # 限制日志的大小
+    logging: 
+        driver: "json-file"
+        options: 
+            max-size: "500m"
+    #定义挂载点
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq
